@@ -248,54 +248,54 @@ int main(int argc,char* args[])
 			printf("<style type=\"text/css\">\n");
 			switch (colorshema)
 			{
-				case 1:  printf("body       {color: white; background-color: black;}\n");
-								 printf(".reset     {color: white;}\n");
-								 printf(".bg-reset  {background-color: black;}\n");
+				case 1:  printf("body       {color: #eee8d5; background-color: #073642;}\n");
+								 printf(".reset     {color: #eee8d5;}\n");
+								 printf(".bg-reset  {background-color: #073642;}\n");
 								 break;
 				case 2:  printf("body       {background-color: pink;}\n");
-								 printf(".reset     {color: black;}\n");
+								 printf(".reset     {color: #073642;}\n");
 								 printf(".bg-reset  {background-color: pink;}\n");
 								 break;
-				default: printf(".reset     {color: black;}\n");
-				         printf(".bg-reset  {background-color: white;}\n");
+				default: printf(".reset     {color: #073642;}\n");
+				         printf(".bg-reset  {background-color: #eee8d5;}\n");
 			}
 			if (colorshema!=1)
 			{
-				printf(".black     {color: black;}\n");
-				printf(".red       {color: red;}\n");
-				printf(".green     {color: green;}\n");
-				printf(".yellow    {color: olive;}\n");
-				printf(".blue      {color: blue;}\n");
-				printf(".purple    {color: purple;}\n");
-				printf(".cyan      {color: teal;}\n");
-				printf(".white     {color: gray;}\n");
-				printf(".bg-black  {background-color: black;}\n");
-				printf(".bg-red    {background-color: red;}\n");
-				printf(".bg-green  {background-color: green;}\n");
-				printf(".bg-yellow {background-color: olive;}\n");
-				printf(".bg-blue   {background-color: blue;}\n");
-				printf(".bg-purple {background-color: purple;}\n");
-				printf(".bg-cyan   {background-color: teal;}\n");
-				printf(".bg-white  {background-color: gray;}\n");
+				printf(".black     {color: #073642;}\n");
+				printf(".red       {color: #dc322f;}\n");
+				printf(".green     {color: #859900;}\n");
+				printf(".yellow    {color: #b58900;}\n");
+				printf(".blue      {color: #268bd2;}\n");
+				printf(".purple    {color: #d33682;}\n");
+				printf(".cyan      {color: #2aa198;}\n");
+				printf(".white     {color: #eee8d5;}\n");
+				printf(".bg-black  {background-color: #073642;}\n");
+				printf(".bg-red    {background-color: #dc322f;}\n");
+				printf(".bg-green  {background-color: #859900;}\n");
+				printf(".bg-yellow {background-color: #b58900;}\n");
+				printf(".bg-blue   {background-color: #268bd2;}\n");
+				printf(".bg-purple {background-color: #d33682;}\n");
+				printf(".bg-cyan   {background-color: #2aa198;}\n");
+				printf(".bg-white  {background-color: #eee8d5;}\n");
 			}
 			else
 			{
-				printf(".black     {color: black;}\n");
-				printf(".red       {color: red;}\n");
+				printf(".black     {color: #073642;}\n");
+				printf(".red       {color: #dc322f;}\n");
 				printf(".green     {color: lime;}\n");
-				printf(".yellow    {color: yellow;}\n");
+				printf(".yellow    {color: #b58900;}\n");
 				printf(".blue      {color: #3333FF;}\n");
 				printf(".purple    {color: fuchsia;}\n");
 				printf(".cyan      {color: aqua;}\n");
-				printf(".white     {color: white;}\n");
-				printf(".bg-black  {background-color: black;}\n");
-				printf(".bg-red    {background-color: red;}\n");
+				printf(".white     {color: #eee8d5;}\n");
+				printf(".bg-black  {background-color: #073642;}\n");
+				printf(".bg-red    {background-color: #dc322f;}\n");
 				printf(".bg-green  {background-color: lime;}\n");
-				printf(".bg-yellow {background-color: yellow;}\n");
+				printf(".bg-yellow {background-color: #b58900;}\n");
 				printf(".bg-blue   {background-color: #3333FF;}\n");
 				printf(".bg-purple {background-color: fuchsia;}\n");
 				printf(".bg-cyan   {background-color: aqua;}\n");
-				printf(".bg-white  {background-color: white;}\n");
+				printf(".bg-white  {background-color: #eee8d5;}\n");
 			}
 			printf(".underline {text-decoration: underline;}\n");
 			printf(".bold      {font-weight: bold;}\n");
@@ -314,7 +314,7 @@ int main(int argc,char* args[])
 		{
 			switch (colorshema)
 			{
-				case 1: printf("<body style=\"color:white; background-color:black\">\n"); break;
+				case 1: printf("<body style=\"color:white; background-color:#073642\">\n"); break;
 				case 2: printf("<body style=\"background-color:pink\">\n");	break;
 			}
 		}
@@ -487,64 +487,65 @@ int main(int argc,char* args[])
 						printf("<span class=\"");
 					else
 						printf("<span style=\"");
-					switch (fc)
+					int ffc = (fc == bc) ? 0 : fc;
+					switch (ffc)
 					{
 						case	0: if (stylesheet)
 											 printf("black ");
 										 else
-											 printf("color:black;");
+											 printf("color:#073642;");
 										 break; //Black
 						case	1: if (stylesheet)
 											 printf("red ");
 										 else
-											 printf("color:red;");
+											 printf("color:#dc322f;");
 										 break; //Red
 						case	2: if (stylesheet)
 											 printf("green ");
 										 else if (colorshema!=1)
-											 printf("color:green;");
+											 printf("color:#859900;");
 										 else
 											 printf("color:lime;");
 										 break; //Green
 						case	3: if (stylesheet)
 											 printf("yellow ");
 										 else if (colorshema!=1)
-											 printf("color:olive;");
+											 printf("color:#b58900;");
 										 else
 											 printf("color:yellow;");
 										 break; //Yellow
 						case	4: if (stylesheet)
 											 printf("blue ");
 										 else if (colorshema!=1)
-											 printf("color:blue;");
+											 printf("color:#268bd2;");
 										 else
 											 printf("color:#3333FF;");
 										 break; //Blue
 						case	5: if (stylesheet)
 											 printf("purple ");
 										 else if (colorshema!=1)
-											 printf("color:purple;");
+											 printf("color:#d33682;");
 										 else
 											 printf("color:fuchsia;");
 										 break; //Purple
 						case	6: if (stylesheet)
 											 printf("cyan ");
 										 else if (colorshema!=1)
-											 printf("color:teal;");
+											 printf("color:#2aa198;");
 										 else
 											 printf("color:aqua;");
 										 break; //Cyan
 						case	7: if (stylesheet)
 											 printf("white ");
 										 else if (colorshema!=1)
-											 printf("color:gray;");
+											 printf("color:#eee8d5;");
 										 else
 											 printf("color:white;");
 										 break; //White
 						case	9: if (stylesheet)
 											 printf("reset ");
 										 else if (colorshema!=1)
-											 printf("color:black;");
+											 printf("color:#073642;");
 										 else
 											 printf("color:white;");
 										 break; //Reset
@@ -554,59 +555,59 @@ int main(int argc,char* args[])
 						case	0: if (stylesheet)
 											 printf("bg-black ");
 										 else
-											 printf("background-color:black;");
+											 printf("background-color:#073642;");
 										 break; //Black
 						case	1: if (stylesheet)
 											 printf("bg-red ");
 										 else
-											 printf("background-color:red;");
+											 printf("background-color:#dc322f;");
 										 break; //Red
 						case	2: if (stylesheet)
 											 printf("bg-green ");
 										 else if (colorshema!=1)
-											 printf("background-color:green;");
+											 printf("background-color:#859900;");
 										 else
 											 printf("background-color:lime;");
 										 break; //Green
 						case	3: if (stylesheet)
 											 printf("bg-yellow ");
 										 else if (colorshema!=1)
-											 printf("background-color:olive;");
+											 printf("background-color:#b58900;");
 										 else
 											 printf("background-color:yellow;");
 										 break; //Yellow
 						case	4: if (stylesheet)
 											 printf("bg-blue ");
 										 else if (colorshema!=1)
-											 printf("background-color:blue;");
+											 printf("background-color:#268bd2;");
 										 else
 											 printf("background-color:#3333FF;");
 										 break; //Blue
 						case	5: if (stylesheet)
 											 printf("bg-purple ");
 										 else if (colorshema!=1)
-											 printf("background-color:purple;");
+											 printf("background-color:#d33682;");
 										 else
 											 printf("background-color:fuchsia;");
 										 break; //Purple
 						case	6: if (stylesheet)
 											 printf("bg-cyan ");
 										 else if (colorshema!=1)
-											 printf("background-color:teal;");
+											 printf("background-color:#2aa198;");
 										 else
 											 printf("background-color:aqua;");
 										 break; //Cyan
 						case	7: if (stylesheet)
 											 printf("bg-white ");
 										 else if (colorshema!=1)
-											 printf("background-color:gray;");
+											 printf("background-color:#eee8d5;");
 										 else
 											 printf("background-color:white;");
 										 break; //White
 						case	9: if (stylesheet)
 											 printf("bg-reset ");
 										 else if (colorshema==1)
-											 printf("background-color:black;");
+											 printf("background-color:#073642;");
 										 else if (colorshema==2)
 											 printf("background-color:pink;");
 										 else
